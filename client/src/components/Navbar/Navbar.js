@@ -12,6 +12,9 @@ class Navbar extends Component {
         if (this.Auth.loggedIn()) {
             return (
                 <ul className="navbar-nav">
+                    <li>
+                        <Link className="nav-link" to="/addquestion">Add Question</Link>
+                    </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/profile">Profile</Link>
                     </li>
