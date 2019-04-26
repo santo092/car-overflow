@@ -32,7 +32,6 @@ class App extends Component {
   render() {
     console.log(process.env.REACT_APP_SECRET_CODE);
     return (
-      <Router>
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -42,11 +41,8 @@ class App extends Component {
           <button type="button" className="btn btn-primary" onClick={this.goToEditProfile}>Go to Profile</button>
           <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
           {/* <button type="button" className="btn btn-secondary" onClick={this.goToQuestions}>Add a Question</button> */}
-          <Link to="/addquestion">Add Question</Link>
         </p>
-        <Route exact path="/addquestion" component={Add} />
       </div>
-      </Router>
     );
   }
 }
