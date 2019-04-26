@@ -12,6 +12,8 @@ class AllQuestions extends Component {
     componentDidMount() {
         API
         .getAllQuesions()
-        .then(res => this.setState({ }))
+        .then(response => this.setState({  }))
     }
 }
+
+export default AllQuestions

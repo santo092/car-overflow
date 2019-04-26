@@ -15,10 +15,12 @@ class Add extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault();
+        console.log(this.state);
         API
-            .addNewQuestion(this.state)
+            .addNewQuestion(this.state.title, this.state.body)
             .then(response => {
-                alert(`Added new question with the title: ${response.data.name}`)
+                alert(`Added new question with the title: ${response.data.title}`)
+                console.log(response);
                 this.setState({
                     title: "",
                     body: "",

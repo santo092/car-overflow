@@ -31,6 +31,6 @@ ReactDOM.render(
             <Route exact path="/addquestion" component={Add} />
         </div>
     </Router>
-    , document.getElementById('root')
+    ,document.getElementById('root')
 );
 registerServiceWorker();
