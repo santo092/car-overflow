@@ -58,6 +58,21 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
+app.post('/api/add', (req, res) => {
+  db.Question.create({
+    title: req.body.title,
+    body: req.body.body
+  }).then(dbQuestion => res.json(dbQuestion))
+  .catch(err => res.json(err));
+});
+
+app.get("/api/add", (req, res) => {
+  db.Question
+  .find({})
+  .then(dbQuestion => res.json(dbQuestion))
+  .catch(err => res.json(err));
+}); 
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
