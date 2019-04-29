@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import AuthService from '../AuthService';
-import SearchField from 'react-search-field';
 
 class Navbar extends Component {
     constructor() {
         super();
         this.Auth = new AuthService();
     }
-
-
 
     showNavigation = () => {
         if (this.Auth.loggedIn()) {
@@ -44,15 +41,8 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-
                 <div className="container">
-                
-                  <Link className="navbar-brand" to="/">React JWT App</Link>
-                    <SearchField className="searchbar"
-                        placeholder="Search for a Question"
-                         onChange={this.onChange}  
-                        
-                    />
+                    <Link className="navbar-brand" to="/">React JWT App</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -61,7 +51,6 @@ class Navbar extends Component {
                         </ul>
                         {this.showNavigation()}
                     </div>
-                
                 </div>
             </nav>
         )
