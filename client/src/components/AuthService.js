@@ -6,6 +6,7 @@ export default class AuthService {
         // Get a token
         return axios.post('api/login', {email: email, password: password})
         .then(res => {
+            console.log('AuthService: login success', res.data)
             // set the token once the user logs in
             this.setToken(res.data.token);
             // return the rest of the response
