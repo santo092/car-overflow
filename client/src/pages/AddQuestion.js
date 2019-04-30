@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import API from "../utils/API";
+import { Z_BLOCK } from "zlib";
 
 class Add extends Component {
 
@@ -56,7 +58,7 @@ class Add extends Component {
                             value={this.state.body}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}><Link className="nav-link" to="/addquestion">Submit</Link></button>
                 </form>
             </div>
         )
