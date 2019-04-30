@@ -73,6 +73,13 @@ app.get("/api/add", (req, res) => {
   .catch(err => res.json(err));
 }); 
 
+app.get("/api/reply", (req, res) => {
+  db.Reply
+  .find({})
+  .then(dbReply => res.json(dbReply))
+  .catch(err => res.json(err))
+})
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

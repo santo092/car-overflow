@@ -12,11 +12,15 @@ class Navbar extends Component {
 
 
     showNavigation = () => {
+        console.log('Navbar: checking if logged in', this.Auth.loggedIn())
         if (this.Auth.loggedIn()) {
             return (
                 <ul className="navbar-nav">
                     <li>
                         <Link className="nav-link" to="/addquestion">Add Question</Link>
+                    </li>
+                    <li>
+                        <Link className="nav-link" to="/allquestions">All Questions</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/profile">Profile</Link>
