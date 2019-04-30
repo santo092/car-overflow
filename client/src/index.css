@@ -3,3 +3,81 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.searchbar {
+  width: 590px;
+  margin-left: 140px;
+ 
+
+}
+
+.menu-bar {
+  width: 380px;
+
+
+}
+
+/* Media Queries for different sized screens */
+
+@media only screen and (max-width: 1100px) {
+  .searchbar {
+    width: 390px;
+    border: 0px !important;
+    margin-left: 60px;
+ 
+  }
+    
+
+}
+
+
+
+@media only screen and (max-width: 770px) {
+  .searchbar {
+    width: 170px;
+    margin-left: 0px;
+ 
+  }
+
+}
+
+
+@media only screen and (max-width: 615px) {
+  .searchbar {
+    width: 190px;
+    margin-right: 60px;
+  
+  }
+ 
+
+
+}
+
+
+@media only screen and (max-width: 515px) {
+  .searchbar {
+    width: 120px;
+    margin-right: 100px;
+
+    
+  }
+    
+
+}
+
+@media only screen and (max-width: 495px) {
+  .searchbar {
+    width: 40px;
+
+  }
+
+  .navbar-brand {
+    width: 20px;
+
+
+  }
+    
+ 
+
+}

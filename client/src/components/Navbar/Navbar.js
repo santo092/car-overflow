@@ -48,7 +48,7 @@ class Navbar extends Component {
                 <div className="container">
                 
                   <Link className="navbar-brand" to="/">React JWT App</Link>
-                    <SearchField className="searchbar"
+                    <SearchField classNames="searchbar"
                         placeholder="Search for a Question"
                          onChange={this.onChange}  
                         
@@ -56,7 +56,7 @@ class Navbar extends Component {
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="collapse navbar-collapse menu-bar"  id="navbarNav">
                         <ul className="navbar-nav mr-auto">
                         </ul>
                         {this.showNavigation()}
