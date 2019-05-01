@@ -13,7 +13,11 @@ const questionSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    reply: [{
+        type: Schema.Types.ObjectId,
+        ref: "Reply"
+    }]
 });
 
 const Question = mongoose.model("Question", questionSchema)
