@@ -13,5 +13,8 @@ export default {
   },
   displayQuestions: (title, body) => {
     return axios.get('/api/add', {title: title, body: body});
+  },
+  displayOneQuestion: (id) => {
+    return axios.get('/api/add/' + id);
   }
 };

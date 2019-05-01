@@ -69,9 +69,29 @@ app.post('/api/add', (req, res) => {
 app.get("/api/add", (req, res) => {
   db.Question
   .find({})
+  .populate("reply")
   .then(dbQuestion => res.json(dbQuestion))
   .catch(err => res.json(err));
 }); 
+
+app.get("/api/add/:id", (req, res) => {
+  db.Question
+  .findById({ _id: req.params.id})
+  .populate("reply")
+  .then(dbQuestion => res.json(dbQuestion))
+  .catch(err => res.json(err));
+})
+
+app.post("/api/reply/:id", (req, res) => {
+  db.Reply.create(req.body)
+    .then(dbReply => {
+      return db.Question.findOneAndUpdate({ _id: req.params.id}, { $push: {reply: dbReply._id} }, { new: true});
+    })
+    .then(dbQuestion => {
+      res.json(dbQuestion);
+    })
+  .catch(err =>  res.json(err));
+})
 
 app.get("/api/reply", (req, res) => {
   db.Reply
