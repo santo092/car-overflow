@@ -18,6 +18,11 @@ body {
 
 }
 
+.fa-car {
+  font-size: 40px;
+ 
+  }
+
 /* Media Queries for different sized screens */
 
 @media only screen and (max-width: 1100px) {
@@ -59,6 +64,7 @@ body {
   .searchbar {
     width: 120px;
     margin-right: 100px;
+    margin-left: -60px;
 
     
   }

@@ -50,22 +50,26 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
 
                 <div className="container">
-                
-                  <Link className="navbar-brand" to="/">React JWT App</Link>
+
+                    <Link className="navbar-brand" to="/"><i className="fas fa-car"></i></Link>
+                                       
+                    {/*  Our searchbar */}
                     <SearchField classNames="searchbar"
                         placeholder="Search for a Question"
-                         onChange={this.onChange}  
-                        
+                        onChange={this.onChange}
                     />
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse menu-bar"  id="navbarNav">
+                    <div className="collapse navbar-collapse menu-bar" id="navbarNav">
                         <ul className="navbar-nav mr-auto">
+               
+
+
                         </ul>
                         {this.showNavigation()}
                     </div>
-                
+
                 </div>
             </nav>
         )
