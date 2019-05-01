@@ -68,7 +68,7 @@ app.post('/api/add', (req, res) => {
 
 app.get("/api/add", (req, res) => {
   db.Question
-  .find({})
+  .find({}).sort({date: -1})
   .populate("reply")
   .then(dbQuestion => res.json(dbQuestion))
   .catch(err => res.json(err));
