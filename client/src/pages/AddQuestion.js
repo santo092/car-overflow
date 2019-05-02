@@ -7,7 +7,8 @@ class Add extends Component {
 
     state = {
         title: "",
-        body: ""
+        body: "",
+        username: "",
     };
 
     handleInputChange = e => {

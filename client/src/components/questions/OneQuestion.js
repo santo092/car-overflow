@@ -8,10 +8,15 @@ class OneQuestion extends Component {
     state = {
         title: "",
         body: "",
-        reply: []
+        reply: [],
+        inputReply: ""
     }
 
     componentDidMount() {
+        this.getAllReplies();
+    }
+
+    getAllReplies = () => {
         API
             .displayOneQuestion(this.props.match.params.id)
             .then(res => {
@@ -31,14 +36,16 @@ class OneQuestion extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault();
-        console.log(this.state);
         API
-            .addNewReply(this.state.id, this.state.body)
+            .addNewReply(this.props.match.params.id, this.state.inputReply)
             .then(response => {
                 alert(`Added new reply with the body: ${response.data.body}`)
+                console.log(response.data);
+                this.getAllReplies();
             })
+        console.log(this.state);
     }
-    
+
     render() {
 
         const style = {
@@ -53,14 +60,18 @@ class OneQuestion extends Component {
                         {this.state.reply.map(reply => (
                             <div className="card w-75">
                                 <div className="card-body">
-                                    <p>{reply.body}</p>
+                                    <p>{reply.reply}</p>
                                     <p style={style}>{reply.date}</p>
                                 </div>
                             </div>
                         ))}
                         <br></br>
                         <form>
-                            <input/>
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="inputReply"
+                                onChange={this.handleInputChange} />
                             <button type="submit" onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>

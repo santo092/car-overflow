@@ -17,7 +17,7 @@ export default {
   displayOneQuestion: (id) => {
     return axios.get('/api/add/' + id);
   },
-  addNewReply: (id, body) => {
-    return axios.post('/api/reply/' + id, {body: body})
+  addNewReply: (id, reply) => {
+    return axios.post('/api/reply/' + id, {reply: reply})
   }
 };
