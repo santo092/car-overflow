@@ -4,7 +4,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import OneQuestion from "../components/questions/OneQuestion";
 import { Link } from 'react-router-dom';
 import withAuth from './../components/withAuth';
-import parse from 'date-fns/parse'
+import moment from 'moment'
 
 class AllQuestions extends Component {
 
@@ -24,7 +24,6 @@ class AllQuestions extends Component {
                 console.log(this.state.questions)
             })
             .catch(err => console.log(err));
-            this.formatDate(this.state.questions.question);
     }
 
     handleClick(id) {
@@ -39,9 +38,11 @@ class AllQuestions extends Component {
     }
 
     formatDate = (date) => {
-        console.log("PARSED DATE: ", parse(date));
         // console.log(Date.now());
-        return JSON.stringify(parse(date));
+        let formatDate = moment(date).format('MMMM Do YYYY, h:mm:ss a');
+        
+        console.log(formatDate);
+        return formatDate;
     }
 
     render() {

@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "date-fns": "^1.30.1",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",

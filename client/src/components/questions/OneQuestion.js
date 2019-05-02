@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
 import withAuth from "./../withAuth";
+import moment from 'moment';
 
 class OneQuestion extends Component {
 
@@ -40,11 +41,16 @@ class OneQuestion extends Component {
         API
             .addNewReply(this.props.match.params.id, this.state.inputReply, this.props.user.username)
             .then(response => {
-                alert(`Added new reply with the body: ${response.data.body}`)
                 console.log(response.data);
                 this.getAllReplies();
             })
         console.log(this.state);
+    }
+
+    formatDate = (date) => {
+        let formatDate = moment(date).format('MMMM Do YYYY, h:mm:ss a');
+        console.log(formatDate);
+        return formatDate;
     }
 
     render() {
@@ -63,7 +69,7 @@ class OneQuestion extends Component {
                                 <div className="card-body">
                                     <p>{reply.reply}</p>
                                     <p>Username: {reply.username}</p>
-                                    <p style={style}>{reply.date}</p>
+                                    <p style={style}>{this.formatDate(reply.date)}</p>
                                 </div>
                             </div>
                         ))}
