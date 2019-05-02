@@ -14,7 +14,7 @@ class Navbar extends Component {
     handleSearch = (value) => {
         // API.showSearchResult(value)
         // .then(res =>
-        //     console.log(res.data)
+        //     console.log("navbarres.data", res.data)
             
         //   )
         //   .catch(err => console.log(err));

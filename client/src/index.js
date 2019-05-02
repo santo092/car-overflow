@@ -33,6 +33,7 @@ ReactDOM.render(
             <Route exact path="/addquestion" component={Add} />
             <Route exact path="/allquestions" component={AllQuestions} />
             <Route exact path="/onequestion" component={OneQuestion} />
+            <Route exact path="/allquestions/:search" component={AllQuestions} />
         </div>
     </Router>
     ,document.getElementById('root')
