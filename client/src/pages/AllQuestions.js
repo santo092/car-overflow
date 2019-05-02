@@ -18,9 +18,10 @@ class AllQuestions extends Component {
 
     componentDidMount() {
         //Returns a string of query parameters using a search
-        let params = new URLSearchParams(this.props.location.search);
-        console.log("Stuff", params.get("search"))
-        if (params.get("search")) {
+        console.log(this.props);
+         let params = new URLSearchParams(this.props.history.location.search);
+         console.log("Stuff", params.get("search"))
+         if (params.get("search")) {
             API.showSearchResult(params.get("search"))
                 .then(res => {
                     this.setState({ questions: res.data });
