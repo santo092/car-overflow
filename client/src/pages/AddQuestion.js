@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import API from "../utils/API";
 import { Z_BLOCK } from "zlib";
+import withAuth from "../components/withAuth";
 
 class Add extends Component {
 
     state = {
         title: "",
-        body: ""
+        body: "",
+        username: "",
     };
 
     handleInputChange = e => {
@@ -18,8 +20,9 @@ class Add extends Component {
     handleFormSubmit = e => {
         e.preventDefault();
         console.log(this.state);
+        console.log(this.props.user)
         API
-            .addNewQuestion(this.state.title, this.state.body)
+            .addNewQuestion(this.state.title, this.state.body, this.props.user.username)
             .then(response => {
                 alert(`Added new question with the title: ${response.data.title}`)
                 console.log(response);
@@ -65,4 +68,4 @@ class Add extends Component {
     }
 }
 
-export default Add;
+export default withAuth(Add);

@@ -58,17 +58,18 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
-app.post('/api/add', (req, res) => {
+app.post('/api/add/:username', (req, res) => {
   db.Question.create({
     title: req.body.title,
-    body: req.body.body
+    body: req.body.body,
+    username: req.params.username
   }).then(dbQuestion => res.json(dbQuestion))
   .catch(err => res.json(err));
 });
 
 app.get("/api/add", (req, res) => {
   db.Question
-  .find({})
+  .find({}).sort({date: -1})
   .populate("reply")
   .then(dbQuestion => res.json(dbQuestion))
   .catch(err => res.json(err));

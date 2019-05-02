@@ -14,6 +14,10 @@ const questionSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    username: {
+        type: String,
+        required: true
+    },
     reply: [{
         type: Schema.Types.ObjectId,
         ref: "Reply"
