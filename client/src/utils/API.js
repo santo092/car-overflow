@@ -16,5 +16,8 @@ export default {
   },
   displayOneQuestion: (id) => {
     return axios.get('/api/add/' + id);
+  },
+  showSearchResult: (title) => {
+    return axios.get('/api/question/' + title);
   }
 };

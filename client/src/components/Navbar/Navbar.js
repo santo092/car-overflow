@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import AuthService from '../AuthService';
 import SearchField from 'react-search-field';
+import API from '../../utils/API';
 
 class Navbar extends Component {
     constructor() {
@@ -9,7 +10,16 @@ class Navbar extends Component {
         this.Auth = new AuthService();
     }
 
+    handleSearch = (value) => {
+        API.showSearchResult(value)
+        .then(res =>
+            console.log(res.data)
+            
+          )
+          .catch(err => console.log(err));
+    
 
+    }
 
     showNavigation = () => {
         console.log('Navbar: checking if logged in', this.Auth.loggedIn())
@@ -47,23 +57,23 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
 
                 <div className="container">
 
                     <Link className="navbar-brand" to="/"><i className="fas fa-car"></i></Link>
-                                       
+
                     {/*  Our searchbar */}
                     <SearchField classNames="searchbar"
                         placeholder="Search for a Question"
-                        onChange={this.onChange}
+                        onSearchClick={this.handleSearch}
                     />
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse menu-bar" id="navbarNav">
                         <ul className="navbar-nav mr-auto">
-               
+
 
 
                         </ul>
