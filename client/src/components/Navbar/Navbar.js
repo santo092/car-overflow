@@ -69,7 +69,6 @@ class Navbar extends Component {
                 <div className="container">
 
                     <Link className="navbar-brand" to="/allquestions"><i className="fas fa-car"></i></Link>
-
                     {/*  Our searchbar */}
                     <SearchField classNames="searchbar"
                         placeholder="Search for a Question"
