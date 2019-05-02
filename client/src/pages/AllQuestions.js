@@ -3,6 +3,8 @@ import API from '../utils/API';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import OneQuestion from "../components/questions/OneQuestion";
 import { Link } from 'react-router-dom';
+import withAuth from './../components/withAuth';
+import parse from 'date-fns/parse'
 
 class AllQuestions extends Component {
 
@@ -14,6 +16,7 @@ class AllQuestions extends Component {
     //If questions is empty, we will show one question with details
 
     componentDidMount() {
+        console.log(this.props.user.username);
         API
             .displayQuestions()
             .then(response => {
@@ -21,6 +24,7 @@ class AllQuestions extends Component {
                 console.log(this.state.questions)
             })
             .catch(err => console.log(err));
+            this.formatDate(this.state.questions.question);
     }
 
     handleClick(id) {
@@ -32,6 +36,12 @@ class AllQuestions extends Component {
                 this.setState({ data: res.data });
                 console.log(this.state.data)
             })
+    }
+
+    formatDate = (date) => {
+        console.log("PARSED DATE: ", parse(date));
+        // console.log(Date.now());
+        return JSON.stringify(parse(date));
     }
 
     render() {
@@ -47,6 +57,7 @@ class AllQuestions extends Component {
                             <div onClick={() => this.handleClick(question._id)} className="card-body">
                                 <h5 className="card-title">{question.title}</h5>
                                 <p className="card-text">{question.body}</p>
+                                <p className="card-text">By {question.username} at {this.formatDate(question.date)}</p>
                             </div>
                         </div>
                         </Link>
@@ -58,7 +69,7 @@ class AllQuestions extends Component {
     }
 }
 
-export default AllQuestions
+export default withAuth(AllQuestions);
 
 /*
 

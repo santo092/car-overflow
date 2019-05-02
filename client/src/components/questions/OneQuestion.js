@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-
+import withAuth from "./../withAuth";
 
 class OneQuestion extends Component {
 
@@ -13,6 +13,7 @@ class OneQuestion extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props.user);
         this.getAllReplies();
     }
 
@@ -37,7 +38,7 @@ class OneQuestion extends Component {
     handleFormSubmit = e => {
         e.preventDefault();
         API
-            .addNewReply(this.props.match.params.id, this.state.inputReply)
+            .addNewReply(this.props.match.params.id, this.state.inputReply, this.props.user.username)
             .then(response => {
                 alert(`Added new reply with the body: ${response.data.body}`)
                 console.log(response.data);
@@ -61,6 +62,7 @@ class OneQuestion extends Component {
                             <div className="card w-75">
                                 <div className="card-body">
                                     <p>{reply.reply}</p>
+                                    <p>Username: {reply.username}</p>
                                     <p style={style}>{reply.date}</p>
                                 </div>
                             </div>
@@ -81,5 +83,5 @@ class OneQuestion extends Component {
     }
 }
 
-export default OneQuestion;
+export default withAuth(OneQuestion);
 
