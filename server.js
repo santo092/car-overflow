@@ -83,6 +83,19 @@ app.get("/api/add/:id", (req, res) => {
   .catch(err => res.json(err));
 })
 
+// make a GET route 
+// that finds a all questions by title
+//({"honda"}) fuzzy search ({/honda fit/gi})
+app.get("/api/question/:title", (req, res) =>{
+  db.Question
+  .find({title: req.params.title})
+  .then(dbQuestion => res.json(dbQuestion))
+  .catch(err => res.json(err));
+
+
+
+})
+
 app.post("/api/reply/:id", (req, res) => {
   db.Reply.create(req.body)
     .then(dbReply => {

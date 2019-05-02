@@ -61,7 +61,7 @@ class Add extends Component {
                             value={this.state.body}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}><Link className="nav-link" to="/allquestions">Submit</Link></button>
+                    <button type="submit" className="btn btn-secondary" onClick={this.handleFormSubmit}><Link className="nav-link" to="/addquestion">Submit</Link></button>
                 </form>
             </div>
         )

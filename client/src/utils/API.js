@@ -19,5 +19,8 @@ export default {
   },
   addNewReply: (id, reply, username) => {
     return axios.post('/api/reply/' + id, {reply: reply, username: username})
+  },
+  showSearchResult: (title) => {
+    return axios.get('/api/question/' + title);
   }
 };
