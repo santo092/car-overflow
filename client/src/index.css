@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Open Sans;
+  font-family: 'Allerta', sans-serif;
 }
 
 
@@ -21,6 +21,10 @@ body {
 
 .fa-car {
   font-size: 40px;
+  
+  color: rgb(202, 202, 73);
+  /* color:rgb(142, 136, 153); */
+  text-shadow: 3px 3px 3px black;
  
   }
 
@@ -28,15 +32,36 @@ body {
 
  .navbar-dark .navbar-nav .nav-link {
   color:white;
+  font-weight: 500;
+  font-size: 18px;
+  text-shadow: 1px 1px #080808;
   }
 
 .navbar {
-background-color: grey !important
-
+background-color: #4d4c4c!important;
+border-bottom: 4px solid silver;
+border-top:4px solid rgb(100, 93, 117);
 }
 
-/* Media Queries for different sized screens */
+/* Dotted line in navbar */
+.navbar {
+  position: relative;
+  z-index: 1;    
+}
 
+.navbar:before {
+  border-top: 4px dashed yellow;
+  content:"";
+  margin: 0 auto;
+  position: absolute;
+  top: 10px; left: 0; right: 0; bottom: 0;
+  width: 95%;
+  z-index: -1;
+}
+
+
+
+/* Media Queries for different sized screens */
 @media only screen and (max-width: 1100px) {
   .searchbar {
     width: 390px;

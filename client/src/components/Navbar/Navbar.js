@@ -4,6 +4,7 @@ import AuthService from '../AuthService';
 import SearchField from 'react-search-field';
 import API from '../../utils/API';
 
+
 class Navbar extends Component {
     constructor() {
         super();
@@ -11,12 +12,18 @@ class Navbar extends Component {
     }
 
     handleSearch = (value) => {
-        API.showSearchResult(value)
-        .then(res =>
-            console.log(res.data)
+        // API.showSearchResult(value)
+        // .then(res =>
+        //     console.log(res.data)
             
-          )
-          .catch(err => console.log(err));
+        //   )
+        //   .catch(err => console.log(err));
+
+
+        //Navigates to allquestions route
+        this.props.history.push("/allquestions?search=" + value)
+
+        
     
 
     }
@@ -24,7 +31,7 @@ class Navbar extends Component {
     showNavigation = () => {
         console.log('Navbar: checking if logged in', this.Auth.loggedIn())
         if (this.Auth.loggedIn()) {
-            return (
+            return ( <span>
                 <ul className="navbar-nav">
                     <li>
                         <Link className="nav-link" to="/addquestion">Add Question</Link>
@@ -39,7 +46,7 @@ class Navbar extends Component {
                         {/* this is not using the Link component to logout or user and then refresh the application to the start */}
                         <a className="nav-link" href="/" onClick={() => this.Auth.logout()}>Logout</a>
                     </li>
-                </ul>
+                </ul></span>
             );
         } else {
             return (
@@ -61,7 +68,7 @@ class Navbar extends Component {
 
                 <div className="container">
 
-                    <Link className="navbar-brand" to="/"><i className="fas fa-car"></i></Link>
+                    <Link className="navbar-brand" to="/allquestions"><i className="fas fa-car"></i></Link>
 
                     {/*  Our searchbar */}
                     <SearchField classNames="searchbar"

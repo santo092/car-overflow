@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import OneQuestion from "./OneQuestion";
 // import { Link } from 'react-router-dom';
 
+
 class AllQuestions extends Component {
 
     state = {
@@ -14,6 +15,9 @@ class AllQuestions extends Component {
     //If questions is empty, we will show one question with details
 
     componentDidMount() {
+        //Searched in term in field
+        let params = new URLSearchParams(this.props.location.search);
+        console.log(params.get("search"));
         API
             .displayQuestions()
             .then(response => {
