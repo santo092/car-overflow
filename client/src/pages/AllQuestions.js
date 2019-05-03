@@ -49,6 +49,7 @@ class AllQuestions extends Component {
                 console.log(res);
                 this.setState({ data: res.data });
                 console.log(this.state.data)
+
             })
     }
 

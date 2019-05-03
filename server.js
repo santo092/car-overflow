@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
+const axios = require('axios');
 const path = require('path');
 const mongoose = require('mongoose');
 const morgan = require('morgan'); // used to see requests
@@ -115,6 +116,29 @@ app.get("/api/reply", (req, res) => {
   .then(dbReply => res.json(dbReply))
   .catch(err => res.json(err))
 })
+
+app.get("/api/car/details",(req, res) => {
+  axios({
+    method: "GET",
+    params: {
+     year: req.query.year,
+     make: req.query.make,
+     model: req.query.model,
+     mileage: req.query.mileage
+    },
+    headers: {
+        "content-type":"application/json",
+        "authorization":"Basic ZmQ4OWQyODMtMTUyMi00MjU3LTgwMTQtMzBjZWRhYWYxYzdl",
+        "partner-token":"96f0b6b41bf442aca25487e0bea97799"
+
+    },
+    url: "http://api.carmd.com/v3.0/maint"
+  })
+    .then(response => res.json(response.data))
+    .catch(err => res.status(422).json(err));
+  
+});
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
