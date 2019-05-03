@@ -72,9 +72,10 @@ class AllQuestions extends Component {
                             <Link style={{color: "black"}} to={`/question/${question._id}`}>
                                 <div className="card w-100 shadow-lg p-3 mb-5 bg-white rounded" style={{borderRadius: "20px"}}>
                                     <div onClick={() => this.handleClick(question._id)} className="card-body">
-                                        <h4 className="card-title" style={{ fontWeight: "bolder" }}>{question.title}</h4>
-                                        <p className="card-text">{question.body}</p>
-                                        <p className="card-text" style={{ fontSize: "10px" }}>By {question.username} at {this.formatDate(question.date)}</p>
+                                        <h3 className="card-title" style={{ fontWeight: "bolder" }}>{question.title}</h3>
+                                        <h6 className="card-text">{question.body}</h6>
+                                        <br></br>
+                                        <p className="card-text" style={{ fontSize: "12px" }}>By {question.username} at {this.formatDate(question.date)}</p>
                                     </div>
                                 </div>
                             </Link>
