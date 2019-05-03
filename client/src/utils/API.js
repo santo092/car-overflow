@@ -9,11 +9,11 @@ export default {
   signUpUser: (username, email, password) => {
     return axios.post('api/signup', { username: username, email: email, password: password });
   },
-  addNewQuestion: (title, body) => {
-    return axios.post('/api/add', { title: title, body: body });
+  addNewQuestion: (title, body, username) => {
+    return axios.post('/api/add/' + username, {title: title, body: body});
   },
-  displayQuestions: (title, body) => {
-    return axios.get('/api/add', { title: title, body: body });
+  displayQuestions: (title, body, date, username) => {
+    return axios.get('/api/add', {title: title, body: body, date: date, username: username});
   },
   displayOneQuestion: (id) => {
     return axios.get('/api/add/' + id);
@@ -30,12 +30,14 @@ export default {
         mileage: mileage
        }
     })
-  }
-
-
-
-};
-
+},
+addNewReply: (id, reply, username) => {
+  return axios.post('/api/reply/' + id, {reply: reply, username: username})
+},
+showSearchResult: (title) => {
+  return axios.get('/api/question/' + title);
+}
+}
 
 
 

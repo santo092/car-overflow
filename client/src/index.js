@@ -14,7 +14,7 @@ import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
 import Add from "./pages/AddQuestion";
 import AllQuestions from './pages/AllQuestions';
-import OneQuestion from "./pages/OneQuestion";
+import OneQuestion from "./components/questions/OneQuestion";
 
 // Here is if we have an id_token in localStorage
 if(localStorage.getItem("id_token")) {
@@ -25,14 +25,16 @@ if(localStorage.getItem("id_token")) {
 ReactDOM.render(
     <Router>
         <div>
-            <Navbar />
+            <Route component={Navbar} />
             <Route exact path="/" component={App} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/addquestion" component={Add} />
             <Route exact path="/allquestions" component={AllQuestions} />
-            <Route exact path="/questions/:id" component={OneQuestion} />
+            <Route exact path="/onequestion" component={OneQuestion} />
+            <Route path="/question/:id" component={OneQuestion} />
+            <Route exact path="/allquestions/:search" component={AllQuestions} />
         </div>
     </Router>
     ,document.getElementById('root')

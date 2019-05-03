@@ -38,7 +38,7 @@ class App extends Component {
           <h2>Welcome {this.props.user.email}</h2>
         </div>
         <p className="App-intro">
-          <button type="button" className="btn btn-primary" onClick={this.goToEditProfile}>Go to Profile</button>
+          <button type="button" className="btn btn-secondary" onClick={this.goToEditProfile}>Go to Profile</button>
           <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
           {/* <button type="button" className="btn btn-secondary" onClick={this.goToQuestions}>Add a Question</button> */}
           {/* <Link to="/addquestion">Add Question</Link> */}
