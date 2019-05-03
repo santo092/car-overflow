@@ -59,17 +59,20 @@ class OneQuestion extends Component {
             fontSize: "7px"
         }
         return (
-            <div>
-                <div className="card w-75">
+            <div className="container">
+                <div className="card w-100 shadow-lg p-3 mb-5 bg-white rounded" style={{borderRadius: "20px"}}>
                     <div className="card-body">
-                        <h5 className="card-title">{this.state.title}</h5>
-                        <p className="card-text">{this.state.body}</p>
+                        <h2 className="card-title">{this.state.title}</h2>
+                        <h5 className="card-text">{this.state.body}</h5>
+                        <br></br>
                         {this.state.reply.map(reply => (
-                            <div className="card w-75">
-                                <div className="card-body">
-                                    <p>{reply.reply}</p>
-                                    <p>Username: {reply.username}</p>
-                                    <p style={style}>{this.formatDate(reply.date)}</p>
+                            <div>
+                                <div className="card w-100 shadow-lg p-3 mb-5 bg-white rounded">
+                                    <div className="card-body" style={{padding: "10px"}}>
+                                        <p>Reply: {reply.reply}</p>
+                                        <p>Username: {reply.username}</p>
+                                        <p style={style}>{this.formatDate(reply.date)}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -79,8 +82,10 @@ class OneQuestion extends Component {
                                 type="text"
                                 className="form-control"
                                 name="inputReply"
+                                placeholder="Reply:"
                                 onChange={this.handleInputChange} />
-                            <button type="submit" onClick={this.handleFormSubmit}>Submit</button>
+                            <br></br>
+                            <button type="submit" className="btn" style={{backgroundColor: "yellow"}} onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>
