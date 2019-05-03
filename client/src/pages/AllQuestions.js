@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from '../utils/API';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import OneQuestion from "./OneQuestion";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AllQuestions extends Component {
 
@@ -31,6 +31,7 @@ class AllQuestions extends Component {
                 console.log(res);
                 this.setState({data: res.data});
                 console.log(this.state.data)
+
             })
     }
 
@@ -40,17 +41,20 @@ class AllQuestions extends Component {
                 {this.state.questions.map(question => (
                     <div key={question._id}>
                         <div className="card w-75">
+                                <Link to = {`/question/${question._id}`}>
                             <div onClick={() => this.handleClick(question._id)} className="card-body">
+                               
                                 <h5 className="card-title">{question.title}</h5>
                                 <p className="card-text">{question.body}</p>
                             </div>
+                                </Link>
                         </div>
                     </div>
                 ))}
                 {/* <a href="#" class="btn btn-primary">Submit</a> */}
-                <OneQuestion 
+                {/* <OneQuestion 
                 data={this.state.data}
-                />
+                /> */}
             </div>
         )
     }

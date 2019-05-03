@@ -32,7 +32,7 @@ ReactDOM.render(
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/addquestion" component={Add} />
             <Route exact path="/allquestions" component={AllQuestions} />
-            <Route exact path="/onequestion" component={OneQuestion} />
+            <Route exact path="/questions/:id" component={OneQuestion} />
         </div>
     </Router>
     ,document.getElementById('root')
