@@ -1,15 +1,14 @@
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Allerta', sans-serif;
 }
 
 
 .searchbar {
   width: 590px;
   margin-left: 140px;
- 
-
 }
 
 .menu-bar {
@@ -20,11 +19,61 @@ body {
 
 .fa-car {
   font-size: 40px;
+  
+  color: rgb(202, 202, 73);
+  /* color:rgb(142, 136, 153); */
+  text-shadow: 3px 3px 3px black;
  
   }
 
-/* Media Queries for different sized screens */
+  .footer {
+    border-top:4px solid rgb(100, 93, 117);
+    position: fixed;
+    padding-top: 15px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(47, 44, 44);
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px #080808;
+    font-size: 14px;
+ }
 
+
+
+ .navbar-dark .navbar-nav .nav-link {
+  color:white;
+  font-weight: 500;
+  font-size: 15px;
+  text-shadow: 1px 1px #080808;
+  }
+
+.navbar {
+background-color: #4d4c4c!important;
+border-bottom: 4px solid silver;
+border-top:4px solid rgb(100, 93, 117);
+}
+
+/* Dotted line in navbar */
+.navbar {
+  position: relative;
+  z-index: 1;    
+}
+
+.navbar:before {
+  border-top: 4.3px double yellow;
+  content:"";
+  margin: 0 auto;
+  position: absolute;
+  top: 10px; left: 0; right: 0; bottom: 0;
+  width: 95%;
+  z-index: -1;
+}
+
+
+
+/* Media Queries for different sized screens */
 @media only screen and (max-width: 1100px) {
   .searchbar {
     width: 390px;
