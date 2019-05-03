@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import AuthService from './../components/AuthService';
 import API from './../utils/API';
 
@@ -27,7 +27,7 @@ class Signup extends Component {
   };
 
   handleChange = event => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -35,41 +35,48 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="container">
-
+      <div className="row" style={{width:"90vw", margin:"20px"}}>
+        <div className="col-8">
+          <img src="https://upload.wikimedia.org/wikipedia/en/9/92/Engine_bay_of_a_2004_Subaru_WRX_STI.jpg"/>
+        </div>
+      
+      <div className="col-4">
         <h1>Signup</h1>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
             <input className="form-control"
-                   placeholder="Username goes here..."
-                   name="username"
-                   type="text"
-                   id="username"
-                   onChange={this.handleChange}/>
+              placeholder="Username goes here..."
+              name="username"
+              type="text"
+              id="username"
+              onChange={this.handleChange} />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>
             <input className="form-control"
-                   placeholder="Email goes here..."
-                   name="email"
-                   type="email"
-                   id="email"
-                   onChange={this.handleChange}/>
+              placeholder="Email goes here..."
+              name="email"
+              type="email"
+              id="email"
+              onChange={this.handleChange} />
           </div>
           <div className="form-group">
             <label htmlFor="pwd">Password:</label>
             <input className="form-control"
-                   placeholder="Password goes here..."
-                   name="password"
-                   type="password"
-                   id="pwd"
-                   onChange={this.handleChange}/>
+              placeholder="Password goes here..."
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={this.handleChange} />
           </div>
           <button type="submit" className="btn btn-secondary">Submit</button>
         </form>
         <p><Link to="/login">Go to Login</Link></p>
+
       </div>
+      </div>
+
     );
   }
 }
