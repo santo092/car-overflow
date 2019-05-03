@@ -78,7 +78,7 @@ class AllQuestions extends Component {
                                     </div>
                                 </div>
                             </Link>
-                            <br></br>
+                           
                         </div>
                     ))}
                     {/* <a href="#" class="btn btn-primary">Submit</a> */}

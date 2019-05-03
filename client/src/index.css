@@ -9,6 +9,7 @@ body {
 .searchbar {
   width: 590px;
   margin-left: 140px;
+  
  
 
 }
@@ -38,7 +39,7 @@ body {
     background-color: rgb(47, 44, 44);
     color: white;
     text-align: center;
-    text-shadow: 3px 3px #080808;
+    text-shadow: 2px 2px #080808;
     font-size: 14px;
  }
 
@@ -47,7 +48,7 @@ body {
  .navbar-dark .navbar-nav .nav-link {
   color:white;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 15px;
   text-shadow: 1px 1px #080808;
   }
 
