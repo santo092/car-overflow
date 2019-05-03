@@ -28,6 +28,20 @@ body {
  
   }
 
+  .footer {
+    border-top:4px solid rgb(100, 93, 117);
+    position: fixed;
+    padding-top: 15px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(47, 44, 44);
+    color: white;
+    text-align: center;
+    text-shadow: 3px 3px #080808;
+    font-size: 14px;
+ }
+
 
 
  .navbar-dark .navbar-nav .nav-link {
@@ -50,7 +64,7 @@ border-top:4px solid rgb(100, 93, 117);
 }
 
 .navbar:before {
-  border-top: 4px dashed yellow;
+  border-top: 4.3px double yellow;
   content:"";
   margin: 0 auto;
   position: absolute;

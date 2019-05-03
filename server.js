@@ -87,8 +87,10 @@ app.get("/api/add/:id", (req, res) => {
 // that finds a all questions by title
 //({"honda"}) fuzzy search ({/honda fit/gi})
 app.get("/api/question/:title", (req, res) =>{
+  var re = new RegExp(req.params.title, "gi");
+
   db.Question
-  .find({title: req.params.title})
+  .find({title: re})
   .then(dbQuestion => res.json(dbQuestion))
   .catch(err => res.json(err));
 
