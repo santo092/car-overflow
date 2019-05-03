@@ -74,7 +74,7 @@ class AllQuestions extends Component {
                                     <div onClick={() => this.handleClick(question._id)} className="card-body">
                                         <h3 className="card-title" style={{ fontWeight: "bolder" }}>{question.title}</h3>
                                         <h6 className="card-text">{question.body}</h6>
-                                        <br></br>
+                                        <hr></hr>
                                         <p className="card-text" style={{ fontSize: "12px" }}>By {question.username} at {this.formatDate(question.date)}</p>
                                     </div>
                                 </div>
