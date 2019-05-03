@@ -36,11 +36,11 @@ class Signup extends Component {
   render() {
     return (
       <div className="row" style={{width:"90vw", margin:"20px"}}>
-        <div className="col-8">
-          <img src="https://upload.wikimedia.org/wikipedia/en/9/92/Engine_bay_of_a_2004_Subaru_WRX_STI.jpg"/>
+        <div className="col-sm-8">
+          <img alt="wrx sti engine" className="img-fluid" src="https://upload.wikimedia.org/wikipedia/en/9/92/Engine_bay_of_a_2004_Subaru_WRX_STI.jpg"/>
         </div>
       
-      <div className="col-4">
+      <div className="col-sm-4">
         <h1>Signup</h1>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
