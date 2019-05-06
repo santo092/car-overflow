@@ -40,13 +40,13 @@ class Login extends Component {
   render() {
     return (
 
-      <div className="row">
+      <div className="row" style={{height:"20", width:"70vw", margin:"20px"}}>
 
-        <div className="col-sm-7">
+        <div className="col-sm-8">
           <img alt="WRX STI" className="img-fluid" src="https://s.yimg.com/ny/api/res/1.2/8p2O7gZMPgItJCGzD.zB5g--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-GB/homerun/motor1_uk_340/f1359b01e9e71cdd35a81f3217cbde2e" />
         </div>
 
-        <div className="col-sm-5">
+        <div className="col-sm-4">
           <h1>Login</h1>
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
