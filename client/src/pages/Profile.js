@@ -53,7 +53,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container" id="holder">
         <h1 className="text-center">Car Maintenance</h1>
         <SearchForm
           handleFormSubmit={this.handleFormSubmit}
@@ -62,7 +62,7 @@ class Search extends Component {
         />
         {/* <SearchResults results={this.state} /> */}
         {this.state.results.map(maintenence => (
-          <div className="card w-75">
+          <div className="card w-100 shadow-lg p-3 mb-5 bg-white rounded">
             <div className="card-body">
               <h3 className="card-title">Maintenance: {maintenence.desc}</h3>
               <p className="card-text">Due at {maintenence.due_mileage} miles.</p>
