@@ -85,7 +85,7 @@ class OneQuestion extends Component {
                                 placeholder="Reply:"
                                 onChange={this.handleInputChange} />
                             <br></br>
-                            <button type="submit" className="btn" style={{backgroundColor: "yellow"}} onClick={this.handleFormSubmit}>Submit</button>
+                            <button type="submit" className="btn border border-secondary" style={{backgroundColor: "#FFFF00"}} onClick={this.handleFormSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>

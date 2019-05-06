@@ -62,7 +62,7 @@ class Add extends Component {
                                 value={this.state.body}
                             />
                         </div>
-                        <button type="submit" className="btn" style={{backgroundColor: "yellow"}}onClick={this.handleFormSubmit}><Link style={{color: "black"}}className="nav-link" to="/addquestion">Submit</Link></button>
+                        <button type="submit" className="btn border border-secondary" style={{backgroundColor: "#FFFF00"}}onClick={this.handleFormSubmit}><Link style={{color: "black"}}className="nav-link" to="/addquestion">Submit</Link></button>
                     </form>
                 </div>
             </div>

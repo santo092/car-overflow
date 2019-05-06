@@ -48,7 +48,7 @@ function SearchForm(props) {
           id="mileage"
         />
 
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+        <button type="submit" onClick={props.handleFormSubmit} className="btn border border-secondary" style={{backgroundColor: "#FFFF00"}}>
           Search
         </button>
       </div>
