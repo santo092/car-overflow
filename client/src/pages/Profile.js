@@ -11,8 +11,8 @@ class Search extends Component {
     make: "",
     model: "",
     mileage: "",
-    results: []
-
+    results: [],
+    error: ""
   };
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
@@ -29,12 +29,17 @@ class Search extends Component {
 
   }
 
+  componentWillUnmount() {
+    document.getElementsByTagName("body")[0].style.height = "100vh";
+  }
+
   handleInputChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value })
   }
 
   handleFormSubmit = event => {
+    document.getElementsByTagName("body")[0].style.height = "200vh";
     event.preventDefault();
     API.getCarDetails(
       this.state.year,
@@ -49,12 +54,10 @@ class Search extends Component {
       .catch(err => this.setState({ error: err.message }));
 
   };
-  
 
   render() {
     return (
       <div className="container" id="holder">
-        <h1 className="text-center">Car Maintenance</h1>
         <SearchForm
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
@@ -62,7 +65,7 @@ class Search extends Component {
         />
         {/* <SearchResults results={this.state} /> */}
         {this.state.results.map(maintenence => (
-          <div className="card w-100 shadow-lg p-3 mb-5 bg-white rounded">
+          <div key={maintenence.desc} className="card w-100 shadow-lg p-3 mb-5 bg-white rounded">
             <div className="card-body">
               <h3 className="card-title">Maintenance: {maintenence.desc}</h3>
               <p className="card-text">Due at {maintenence.due_mileage} miles.</p>

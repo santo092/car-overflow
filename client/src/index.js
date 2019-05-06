@@ -15,6 +15,7 @@ import Navbar from './components/Navbar';
 import Add from "./pages/AddQuestion";
 import AllQuestions from './pages/AllQuestions';
 import OneQuestion from "./components/questions/OneQuestion";
+import HomePage from './pages/HomePage';
 
 // Here is if we have an id_token in localStorage
 if(localStorage.getItem("id_token")) {
@@ -26,7 +27,8 @@ ReactDOM.render(
     <Router>
         <div>
             <Route component={Navbar} />
-            <Route exact path="/" component={App} />
+            <Route exact path="/homepage"component={HomePage} />
+            <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
