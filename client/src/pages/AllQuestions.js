@@ -20,6 +20,7 @@ class AllQuestions extends Component {
     //If questions is empty, we will show one question with details
 
     componentDidMount() {
+        document.getElementsByTagName("body")[0].style.height="100%";
 
         //Returns a string of query parameters using a search
         //console.log(this.props);
@@ -73,6 +74,9 @@ class AllQuestions extends Component {
                 .catch(err => console.log(err));
     }
 
+    componentWillUnmount() {
+        document.getElementsByTagName("body")[0].style.height="100vh";
+    }
 
     handleClick(id) {
         // alert("I've been clicked");
