@@ -1,0 +1,17 @@
+form.search {
+  overflow: auto;
+  margin: 10px;
+}
+
+form.search button[type="submit"] {
+  float: right;
+  margin-top: 10px;
+}
+
+form.search input[type="text"] {
+  margin: 10px;
+}
+
+#holder {
+margin-bottom: 100px;
+}
