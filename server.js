@@ -128,8 +128,8 @@ app.get("/api/car/details",(req, res) => {
     },
     headers: {
         "content-type":"application/json",
-        "authorization":"Basic ZmQ4OWQyODMtMTUyMi00MjU3LTgwMTQtMzBjZWRhYWYxYzdl",
-        "partner-token":"96f0b6b41bf442aca25487e0bea97799"
+        "authorization":"Basic YTZkOGRhZjMtNjRlOS00MzMxLTk2YTYtNDNlMjJmMDhmZmY2",
+        "partner-token":"b5ed91c856684614b3938add9c6106b3	"
 
     },
     url: "http://api.carmd.com/v3.0/maint"
