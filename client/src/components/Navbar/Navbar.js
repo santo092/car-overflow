@@ -22,6 +22,7 @@ class Navbar extends Component {
 
         //Navigates to allquestions route
         this.props.history.push("/allquestions?search=" + value)
+        
 
         
     
@@ -40,7 +41,7 @@ class Navbar extends Component {
                         <Link className="nav-link" to="/allquestions">All Questions</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/profile">My car</Link>
+                        <Link className="nav-link" to="/profile">My Car</Link>
                     </li>
                     <li className="nav-item">
                         {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -66,9 +67,10 @@ class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
 
-                <div className="container">
+                <div className="container">              
 
-                    <Link className="navbar-brand" to="/homepage"><i style={{color: "#FFFF00"}} className="fas fa-car"></i></Link>
+
+                    <Link className="navbar-brand" to="/homepage"><i style={{color: "#FFFF00"}} className="fas fa-car hvr-grow"></i></Link>
                     {/*  Our searchbar */}
                     <SearchField classNames="searchbar"
                         placeholder="Search for a Question"

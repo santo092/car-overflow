@@ -26,14 +26,26 @@ body {
 
 }
 
+.navbar-nav > li{
+  padding-left:22px;
+  padding-right:2px;
+}
+
 .fa-car {
-  font-size: 40px;
-  
+  margin-top: 3px;
+  font-size: 35px;
   color: rgb(202, 202, 73);
   /* color:rgb(142, 136, 153); */
-  text-shadow: 3px 3px 3px black;
- 
+  text-shadow: 4px 4px 4px black;
+  background: #878a90;
+  padding-bottom:8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  border-radius: 50%;
+  
   }
+  
 
   .footer {
     border-top:4px solid rgb(100, 93, 117);
@@ -60,9 +72,11 @@ body {
 
 .navbar {
 background-color: #4d4c4c!important;
-border-bottom: 4px solid silver;
-border-top:4px solid rgb(100, 93, 117);
+/* border-bottom: 4px solid silver; */
+
+border-bottom: 4px solid#4d4c4c;
 margin-bottom: 50px;
+
 }
 
 /* Dotted line in navbar */
@@ -73,6 +87,7 @@ margin-bottom: 50px;
 
 .navbar:before {
   border-top: 4.3px double yellow;
+  border-bottom: 3.0px double yellow;
   content:"";
   margin: 0 auto;
   position: absolute;

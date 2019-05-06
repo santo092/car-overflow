@@ -102,4 +102,3 @@ class OneQuestion extends Component {
 }
 
 export default withAuth(OneQuestion);
-
