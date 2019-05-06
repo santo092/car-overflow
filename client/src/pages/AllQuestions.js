@@ -78,10 +78,6 @@ class AllQuestions extends Component {
         document.getElementsByTagName("body")[0].style.height="100vh";
     }
 
-    componentWillUnmount() {
-        document.getElementsByTagName("body")[0].style.height="100vh";
-    }
-
     handleClick(id) {
         // alert("I've been clicked");
         API
