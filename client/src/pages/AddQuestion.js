@@ -36,6 +36,7 @@ class Add extends Component {
     render() {
         return (
             <div className="container">
+            <br></br>
                 <div className="add">
                     <div className="card w-100 shadow-lg p-3 mb-5 text-white rounded" style={{ borderRadius: "20px", backgroundColor: "#4C4C4C", borderStyle: "solid", borderColor: "white", borderWidth: "6px" }}>
 
